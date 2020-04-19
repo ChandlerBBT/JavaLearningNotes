@@ -2,7 +2,7 @@ package CH3_JavaBasic;
 
 //创建数组并初始化的几种方法
 
-public class S3_10_0_CreateStruct {
+public class S3_10_0_CreateArray {
     public static void main(String[] args) {
         buildStruct();
     }

@@ -4,7 +4,7 @@ package CH3_JavaBasic;
 
 import java.util.Arrays;
 
-public class S3_10_3_CopyStruct {
+public class S3_10_3_CopyArray {
     public static void main(String[] args) {
         copyName();
         copyElements();
