@@ -49,14 +49,19 @@ class Employee {
     private double salary;
     private LocalDate hireDay;
 
-    //公有的构造器
+    //公有的构造器，且构造器与类同名;不能对一个已经存在的对象调用构造器来达到重新设置实例域的目的
     public Employee(String n, double s, int year, int month, int day) {
         name = n;
         salary = s;
         hireDay = LocalDate.of(year, month, day);
+
+        //不要在构造器中声明与实例域重名的局部变量。例如下面的salary将永远也用不到，它们只能在构造器内部访问。
+        //double salary = s;
     }
 
     //公有的域访问器
+    //如果在L48直接将name设置为Public变量，似乎可以不依靠getName()这个域访问器来实现外部访问name的需求。但是这样会破坏封装性，
+    //任何方法都能够访问name，并且更糟糕的是任何方法都有权限修改name。因此我们将name设置为私有变量，并且提供公有的域访问器。
     public String getName() {
         return name;
     }
@@ -89,6 +94,8 @@ class Employee {
     //}
 
     //公有的域更改器
+    //方法用于操作对象、存取对象的实例域，例如下面代码，可以读取调用对象的原有salary，并且还有权限修改salary的值
+    //raiseSalary方法有两个参数，第一个是隐式参数this，第二个是byPercent这个显式参数
     public void raiseSalary(double byPercent) {
         double raise = salary * byPercent / 100;
         salary += raise;
