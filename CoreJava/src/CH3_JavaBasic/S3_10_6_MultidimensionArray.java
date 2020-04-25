@@ -1,7 +1,5 @@
 package CH3_JavaBasic;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
@@ -40,7 +38,7 @@ public class S3_10_6_MultidimensionArray {
         printMultiDArray(magicSquare);
     }
 
-    public static void printMultiDArray(@NotNull int[][] array) {
+    public static void printMultiDArray(int[][] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 if (j < array[i].length - 1) {
